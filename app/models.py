@@ -12,7 +12,7 @@ class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
-    phone_num = db.Column(db.Numeric(15), nullable=False, unique=True)
+    phone_num = db.Column(db.Numeric(15), nullable=False)
     address = db.Column(db.String(75), nullable=True)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     email =  db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
