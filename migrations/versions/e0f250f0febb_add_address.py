@@ -1,8 +1,8 @@
-"""empty message
+"""add address
 
-Revision ID: aac11852b1bc
+Revision ID: e0f250f0febb
 Revises: 
-Create Date: 2023-06-01 20:17:15.764834
+Create Date: 2023-06-02 14:08:17.287087
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'aac11852b1bc'
+revision = 'e0f250f0febb'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,9 +25,7 @@ def upgrade():
     sa.Column('phone_num', sa.Numeric(precision=15), nullable=False),
     sa.Column('address', sa.String(length=75), nullable=True),
     sa.Column('date_created', sa.DateTime(), nullable=False),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('address'),
-    sa.UniqueConstraint('phone_num')
+    sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
 

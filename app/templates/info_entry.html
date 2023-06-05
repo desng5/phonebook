@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Enter Info {% endblock %}
+{% block title %}Enter Info{% endblock %}
 
 {% block header %}
     <h3>Enter Info</h3>
@@ -11,20 +11,28 @@
         <div class="col">
             <div class="card mt-3">
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="{{ url_for('entry') }}" method="post">
                         {{ form.csrf_token }}
 
-                        {{ form.first_name.label }}
-                        {{ form.first_name(class='form-control', placeholder='Enter First Name') }}
+                        <div class="mb-3">
+                            {{ form.first_name.label }}
+                            {{ form.first_name(class='form-control', placeholder='Enter First Name') }}
+                        </div>
 
-                        {{ form.last_name.label }}
-                        {{ form.last_name(class='form-control', placeholder='Enter Last Name') }}
+                        <div class="mb-3">
+                            {{ form.last_name.label }}
+                            {{ form.last_name(class='form-control', placeholder='Enter Last Name') }}
+                        </div>
 
-                        {{ form.phone_num.label }}
-                        {{ form.phone_num(class='form-control', placeholder='Enter Phone Number') }}
-                        
-                        {{ form.address.label }}
-                        {{ form.address(class='form-control', placeholder='Enter Address') }}
+                        <div class="mb-3">
+                            {{ form.phone_number.label }}
+                            {{ form.phone_number(class='form-control', placeholder='Enter Phone Number') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.address.label }}
+                            {{ form.address(class='form-control', placeholder='Enter Address') }}
+                        </div>
 
                         {{ form.submit(class='btn btn-outline-primary w-100 mt-3') }}
 
