@@ -21,12 +21,12 @@ class Entry(FlaskForm):
     submit = SubmitField('Submit')
 
 class SignupForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=64)])
-    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=128)])
+    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=50])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=100)])
     confirm_password = PasswordField('Confirm Password', validators=[InputRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=64)])
-    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=128)])
+    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=50)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=100)])
     submit = SubmitField('Log In')
